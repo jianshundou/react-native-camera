@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:camera="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <jzglib.jzgcom.jzg_react_native_camera.camera.MaskView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvVehicleLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中华人民共和国机动车行驶证"
+                android:textColor="#52524E"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvVehicleLicenseHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请将行驶证置于框内"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+        </jzglib.jzgcom.jzg_react_native_camera.camera.MaskView>
+    </FrameLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/ivBigPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        camera:failureImageScaleType="centerCrop"
+        camera:placeholderImage="@android:color/transparent"
+        camera:placeholderImageScaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:src="@drawable/icon_close" />
+
+    <jzglib.jzgcom.jzg_react_native_camera.camera.FocusImageView
+        android:id="@+id/iv_focus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        camera:focus_fail_id="@drawable/focus_focus_failed"
+        camera:focus_focusing_id="@drawable/focus_focusing"
+        camera:focus_success_id="@drawable/focus_focused" />
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlCaptureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivCapture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_camera_button" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivFlashToggle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_flash_off" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlControl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/icon_confirm" />
+
+            <ImageView
+                android:id="@+id/ivRecapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="70dp"
+                android:src="@drawable/icon_recapture" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
